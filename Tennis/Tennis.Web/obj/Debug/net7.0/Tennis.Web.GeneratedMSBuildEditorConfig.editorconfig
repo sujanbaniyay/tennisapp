@@ -1,0 +1,105 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Tennis.Web
+build_property.RootNamespace = Tennis.Web
+build_property.ProjectDir = C:\Users\frankdexdevs\Documents\writingAssignments\sam_musyoka\tennisapp\Tennis\Tennis.Web\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\frankdexdevs\Documents\writingAssignments\sam_musyoka\tennisapp\Tennis\Tennis.Web
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/frankdexdevs/Documents/writingAssignments/sam_musyoka/tennisapp/Tennis/Tennis.Web/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/frankdexdevs/Documents/writingAssignments/sam_musyoka/tennisapp/Tennis/Tennis.Web/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/frankdexdevs/Documents/writingAssignments/sam_musyoka/tennisapp/Tennis/Tennis.Web/Views/Person/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uXEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/frankdexdevs/Documents/writingAssignments/sam_musyoka/tennisapp/Tennis/Tennis.Web/Views/Person/AddCoach.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uXEFkZENvYWNoLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/frankdexdevs/Documents/writingAssignments/sam_musyoka/tennisapp/Tennis/Tennis.Web/Views/Person/AdminDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uXEFkbWluRGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/frankdexdevs/Documents/writingAssignments/sam_musyoka/tennisapp/Tennis/Tennis.Web/Views/Person/CoachBio.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uXENvYWNoQmlvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/frankdexdevs/Documents/writingAssignments/sam_musyoka/tennisapp/Tennis/Tennis.Web/Views/Person/CoachDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uXENvYWNoRGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/frankdexdevs/Documents/writingAssignments/sam_musyoka/tennisapp/Tennis/Tennis.Web/Views/Person/CoachList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uXENvYWNoTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/frankdexdevs/Documents/writingAssignments/sam_musyoka/tennisapp/Tennis/Tennis.Web/Views/Person/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uXERhc2hib2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/frankdexdevs/Documents/writingAssignments/sam_musyoka/tennisapp/Tennis/Tennis.Web/Views/Person/EnrollForSchedule.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uXEVucm9sbEZvclNjaGVkdWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/frankdexdevs/Documents/writingAssignments/sam_musyoka/tennisapp/Tennis/Tennis.Web/Views/Person/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uXExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/frankdexdevs/Documents/writingAssignments/sam_musyoka/tennisapp/Tennis/Tennis.Web/Views/Person/UserDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uXFVzZXJEYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/frankdexdevs/Documents/writingAssignments/sam_musyoka/tennisapp/Tennis/Tennis.Web/Views/Person/ViewPeople.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uXFZpZXdQZW9wbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/frankdexdevs/Documents/writingAssignments/sam_musyoka/tennisapp/Tennis/Tennis.Web/Views/Person/ViewSchedules.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uXFZpZXdTY2hlZHVsZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/frankdexdevs/Documents/writingAssignments/sam_musyoka/tennisapp/Tennis/Tennis.Web/Views/Schedule/AddSchedule.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NoZWR1bGVcQWRkU2NoZWR1bGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/frankdexdevs/Documents/writingAssignments/sam_musyoka/tennisapp/Tennis/Tennis.Web/Views/Schedule/ViewSchedules.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NoZWR1bGVcVmlld1NjaGVkdWxlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/frankdexdevs/Documents/writingAssignments/sam_musyoka/tennisapp/Tennis/Tennis.Web/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/frankdexdevs/Documents/writingAssignments/sam_musyoka/tennisapp/Tennis/Tennis.Web/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/frankdexdevs/Documents/writingAssignments/sam_musyoka/tennisapp/Tennis/Tennis.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/frankdexdevs/Documents/writingAssignments/sam_musyoka/tennisapp/Tennis/Tennis.Web/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/frankdexdevs/Documents/writingAssignments/sam_musyoka/tennisapp/Tennis/Tennis.Web/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/frankdexdevs/Documents/writingAssignments/sam_musyoka/tennisapp/Tennis/Tennis.Web/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-cpgfx7j871
