@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "View People";
+    Layout = "_AdminLayout";
+}
+
+<div class="container mt-4">
+
+    <h2 class="text-center bg-primary pd-4 text-white fw-bold mb-4">People List</h2>
+
+    <div class="row">
+        @foreach (var person in ViewBag.People)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-header fw-bold bg-success text-white">
+                        <img src="@person.ProfilePic" class="img-fluid" />
+                        @person.FirstName @person.LastName
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <strong>Birth Date:</strong> @person.BirthDate.ToShortDateString()<br />
+                            <strong>Email:</strong> @person.EmailAddress<br />
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-danger">Priviledges:</small>@person.Role
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

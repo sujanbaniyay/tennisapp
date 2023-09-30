@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Coach List";
+    Layout = "_AdminLayout";
+}
+
+<div class="container mt-4">
+
+    <h2 class="text-center bg-primary pd-4 text-white fw-bold mb-4">Coach List</h2>
+
+    <div class="row">
+
+        @foreach (var coach in ViewBag.Coaches)
+        {
+            <div class="col-md-4 mb-4">
+
+                <div class="card">
+
+                    <div class="card-header fw-bold bg-success text-white">
+                        @*Profile image*@
+                        <img src="@coach.ProfilePic" class="img-fluid" />
+                        @coach.FirstName @coach.LastName
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <p class="card-text">
+
+                            <strong>Birth Date:</strong> @coach.BirthDate.ToShortDateString()<br />
+                            <strong>Email:</strong> @coach.EmailAddress<br />
+                            @{
+                                var coachBgr = null as string;
+                                foreach (var bio in ViewBag.CoachBio)
+                                {
+                                    if ((int)bio.CoachId == (int)coach.Id)
+                                    {
+                                        coachBgr = bio.Biography != null ? bio.Biography : "N/A";
+                                        break;
+                                    }
+                                }
+
+                            }
+                            <strong>Biography:</strong> @coachBgr
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        }
+    </div>
