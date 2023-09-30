@@ -1,0 +1,172 @@
+﻿@model Tennis.Web.Models.Domain.Person
+@using Microsoft.AspNetCore.Http;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Anyone For Tennis&trade;</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Tennis.Web.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1499510318569-1a3d67dc3976?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        footer {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            line-height: 3em;
+        }
+    </style>
+</head>
+<body>
+    @*Ensure the session is not null*@
+
+    @if (Context.Session.GetString("email") == null)
+    {
+        <script>
+            window.location.href = "/Person/Login";
+        </script>
+    }
+
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                @if (Context.Session.GetString("role") == "admin")
+                {
+                    <a class="navbar-brand text-primary fw-bolder" asp-area="" asp-controller="Person" asp-action="AdminDashboard">Anyone For Tennis&trade;</a>
+                }
+                @if (Context.Session.GetString("role") == "user")
+                {
+                    <a class="navbar-brand text-primary fw-bolder" asp-area="" asp-controller="Person" asp-action="UserDashboard">Anyone For Tennis&trade;</a>
+                }
+                @if (Context.Session.GetString("role") == "coach")
+                {
+                    <a class="navbar-brand text-primary fw-bolder" asp-area="" asp-controller="Person" asp-action="CoachBio">Anyone For Tennis&trade;</a>
+                }
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        @if (Context.Session.GetString("role") == "admin")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Person" asp-action="AdminDashboard">Dashboard</a>
+                            </li>
+                        }
+                        @if (Context.Session.GetString("role") == "user")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Person" asp-action="UserDashboard">Dashboard</a>
+                            </li>
+                        }
+                        @if (Context.Session.GetString("role") == "coach")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Person" asp-action="CoachBio">Biography</a>
+                            </li>
+                        }
+
+                        @if (Context.Session.GetString("role") == "admin")
+                        {
+                            <li class="nav-item">
+                                <div class="dropdown">
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                                        Actions
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><h5 class="dropdown-header bg-warning">Registrations</h5></li>
+                                        <li><a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="Person" asp-action="AddCoach">Register Coach</a></li>
+                                        <li><a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="Schedule" asp-action="AddSchedule">Create Schedule</a></li>
+                                        <li><h5 class="dropdown-header bg-warning">View Data</h5></li>
+                                        <li><a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="Person" asp-action="ViewPeople">View Users</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        }
+                        @if (Context.Session.GetString("role") == "user")
+                        {
+                            <li class="nav-item">
+                                <div class="dropdown">
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                                        Actions
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="Person" asp-action="EnrollForSchedule">Enroll For Schedules</a></li>
+                                        <li><a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="Person" asp-action="CoachList">View Coaches</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        }
+                        @if (Context.Session.GetString("role") == "coach")
+                        {
+                            <li class="nav-item">
+                                <div class="dropdown">
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                                        Actions
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item nav-link text-dark" asp-area="" asp-controller="Person" asp-action="ViewSchedules">View My Schedules</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        }
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold text-danger" asp-area="" asp-controller="Person" asp-action="Logout">Logout</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex">
+                        @*Create a card for the user details, that is activated as a dropdown*@
+                        <div class="dropdown">
+                            <button type="button" class="btn btn-gradient dropdown-toggle" data-bs-toggle="dropdown">
+                                <span>Welcome, @Context.Session.GetString("name")</span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-item"><i class="fa fa-envelope"></i> <small>@Context.Session.GetString("email")</small></li>
+                                <li class="dropdown-item"><i class="fa fa-user"></i> <small>@Context.Session.GetString("role")</small></li>
+                                <li class="dropdown-item"><i class="fa fa-calendar"></i> <small>@Context.Session.GetString("birthDate")</small></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted bg-black">
+        <div class="container text-center">
+            &copy; 2023 - Anyone For Tennis&trade; <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        $(document).ready(function () {
+            $(".fa-eye").on('click', function () {
+                var pwd = $("#Password");
+                if (pwd.attr("type") == "password") {
+                    pwd.attr("type", "text");
+                } else {
+                    pwd.attr("type", "password");
+                }
+            });
+        });
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
