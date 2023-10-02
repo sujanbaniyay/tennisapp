@@ -1,0 +1,50 @@
+﻿@model Tennis.Web.Models.Domain.SchedulesMD
+
+@{
+    ViewData["Title"] = "Schedule List";
+    Layout = "_AdminLayout";
+}
+
+<div class="container mt-4">
+    <h2 class="text-center bg-primary pd-4 text-white fw-bold mb-4">Schedule List</h2>
+
+    <div class="row">
+        @foreach (var schedule in ViewBag.Schedules)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-header fw-bold bg-success text-white">
+                        @schedule.EventName
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <strong>Location:</strong> @schedule.Location<br />
+                            @{
+                                var coach = null as Tennis.Web.Models.Domain.Person;
+                                foreach (var c in ViewBag.Coaches)
+                                {
+                                    if (c.Id == schedule.CoachId)
+                                    {
+                                        coach = c;
+                                        break;
+                                    }
+                                }
+                            }
+
+                            @if (coach != null)
+                            {
+                                // Coach profile image
+                                <img src="@coach.ProfilePic" class="img-fluid" />
+                                <strong>Coach:</strong> @coach.FirstName @coach.LastName
+                            }
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-danger">Deadline:</small>@schedule.Date.ToShortDateString()
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "View Schedules";
+    Layout = "_AdminLayout";
+}
+
+<div class="container mt-4">
+
+    <h2 class="text-center bg-primary pd-4 text-white fw-bold mb-4">Schedules List</h2>
+
+    <div class="row">
+
+        @foreach (var schedule in ViewBag.Schedules)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-header fw-bold bg-success text-white">
+                        @schedule.EventName
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <strong>Start Date:</strong> @schedule.Date.ToShortDateString()<br />
+                            <strong>Location:</strong> @schedule.Location<br />
+                            @*Display all the users that are in the schedule as a list*@
+                            <strong>Users:</strong>
+                            <ul>
+                                @foreach (var id in ViewBag.ScheduleAssigns)
+                                {
+                                    if (id.ScheduleId == schedule.Id)
+                                    {
+                                        //get the users first and last name and display as list
+                                        foreach (var person in ViewBag.Users)
+                                        {
+                                            if (person.Id == id.UserId)
+                                            {
+                                                <li>@person.FirstName @person.LastName</li>
+                                            }
+                                        }
+                                    }
+                                }
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>

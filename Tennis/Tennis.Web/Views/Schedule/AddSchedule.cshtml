@@ -1,0 +1,65 @@
+﻿@model Tennis.Web.Models.Domain.SchedulesMD
+
+
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Add Schedule";
+    Layout = "_AdminLayout";
+}
+
+@*show all the schedules from the database, then create a button to add schedule which pops up*@
+
+<div class="container mt-2">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header bg-primary text-white text-center">Add Schedule</div>
+                <div class="card-body">
+                    <form asp-action="AddSchedule">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label asp-for="Location">Location</label>
+                                <input asp-for="Location" type="text" class="form-control" autocomplete="off">
+                                <span class="text-danger" asp-validation-for="Location"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="EventName">Event Name</label>
+                                <input asp-for="EventName" type="text" class="form-control">
+                                <span class="text-danger" asp-validation-for="EventName"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Date">Schedule Date</label>
+                            <input asp-for="Date" type="date" class="form-control">
+                            <span class="text-danger" asp-validation-for="Date"></span>
+                        </div>
+                        @*Dropdown containing the names of the coaches from the database with the role of coach*@
+                        <div class="form-group">
+                            <label asp-for="CoachId">Coach</label>
+                            <select asp-for="CoachId" class="form-control">
+                                <option value="">Select Coach</option>
+                                @foreach (var item in ViewBag.Coaches)
+                                {
+                                    <option value="@item.Id">@item.FirstName @item.LastName</option>
+                                }
+                            </select>
+                            <span class="text-danger" asp-validation-for="CoachId"></span>
+                        </div>
+
+                        @if (TempData["msg"] != null)
+                        {
+                            <div class="alert alert-success mt-2 mb-0" role="alert">
+                                @TempData["msg"]
+                            </div>
+                        }
+                        <button type="submit" class="btn btn-primary btn-block mt-1 col-12">Add Schedule</button>
+                        <p class="mt-2 text-muted"><small>or just </small><a href="/Schedule/ViewSchedules">View Schedules</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
